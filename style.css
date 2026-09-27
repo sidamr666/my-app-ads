@@ -1,4 +1,4 @@
-/* Shared look for chessmeet.fyi: the app's dark theme and neon green. */
+/* chessmeet.fyi — the app's dark theme and neon green. RTL-safe (logical properties). */
 :root {
   --bg: #0b1210;
   --panel: #111c18;
@@ -6,62 +6,85 @@
   --text: #e6f2ec;
   --muted: #9bb3a8;
   --neon: #10b981;
-  --neon-soft: rgba(16, 185, 129, 0.14);
-  --warn: #f5b942;
+  --neon-soft: rgba(16, 185, 129, 0.12);
+  --yellow: #f5b942;
+  --yellow-soft: rgba(245, 185, 66, 0.12);
+  --red: #ef4444;
+  --red-soft: rgba(239, 68, 68, 0.12);
+  --blue: #60a5fa;
+  --blue-soft: rgba(96, 165, 250, 0.10);
 }
-
 * { box-sizing: border-box; }
-
 html { -webkit-text-size-adjust: 100%; }
-
 body {
   margin: 0;
-  background: radial-gradient(1200px 600px at 50% -200px, #0f2a20 0%, var(--bg) 60%) fixed;
+  background: radial-gradient(1200px 600px at 50% -220px, #0f2a20 0%, var(--bg) 60%) fixed;
   color: var(--text);
-  font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", Arial, sans-serif;
+  font: 16px/1.7 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Noto Sans Arabic", Tahoma, Arial, sans-serif;
 }
+header, main, footer { max-width: 820px; margin: 0 auto; padding: 0 16px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 
-header, main, footer { max-width: 760px; margin: 0 auto; padding: 0 16px; }
-
-header { padding-top: 28px; }
-
-.brand {
-  display: inline-flex; align-items: center; gap: 10px;
-  color: var(--text); text-decoration: none; font-weight: 700; letter-spacing: 0.3px;
-}
-.brand .dot {
-  width: 12px; height: 12px; border-radius: 50%;
-  background: var(--neon); box-shadow: 0 0 12px var(--neon);
-}
-
+/* Header */
+header { padding-top: 20px; }
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.brand { display: inline-flex; align-items: center; gap: 12px; color: var(--text); text-decoration: none; font-size: 22px; font-weight: 800; }
+.brand img { border-radius: 12px; box-shadow: 0 0 18px rgba(16, 185, 129, .35); }
+.brand b { color: var(--neon); }
+.lang { display: inline-flex; align-items: center; gap: 6px; background: var(--panel); border: 1px solid var(--border); border-radius: 999px; padding: 4px 10px; }
+.lang select { background: transparent; color: var(--text); border: 0; font: inherit; font-size: 14px; outline: none; cursor: pointer; }
+.lang select option { background: var(--panel); color: var(--text); }
 nav { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
 nav a {
-  color: var(--muted); text-decoration: none; font-size: 14px;
-  border: 1px solid var(--border); border-radius: 999px; padding: 4px 12px;
+  display: inline-flex; align-items: center; gap: 6px; color: var(--muted); text-decoration: none; font-size: 14px;
+  border: 1px solid var(--border); border-radius: 999px; padding: 5px 12px; background: rgba(17, 28, 24, .6);
 }
-nav a[aria-current="page"], nav a:hover { color: var(--neon); border-color: var(--neon); }
+nav a[aria-current="page"], nav a:hover { color: var(--neon); border-color: var(--neon); background: var(--neon-soft); }
 
-h1 { font-size: 30px; line-height: 1.2; margin: 28px 0 4px; }
-h2 {
-  font-size: 20px; margin: 34px 0 8px; padding-top: 10px;
-  border-top: 1px solid var(--border);
-}
+/* Icons */
+.ico { width: 20px; height: 20px; fill: currentColor; flex: none; vertical-align: -4px; }
+.nav-ico { width: 16px; height: 16px; }
+.small-ico { width: 15px; height: 15px; margin-inline-end: 4px; }
+.title-ico { width: 34px; height: 34px; color: var(--neon); margin-inline-end: 10px; vertical-align: -6px; }
+.ico.h { color: var(--neon); margin-inline-end: 8px; }
+
+/* Content */
+h1 { font-size: 32px; line-height: 1.2; margin: 30px 0 4px; }
+h2 { font-size: 21px; margin: 34px 0 8px; padding-top: 12px; border-top: 1px solid var(--border); display: flex; align-items: center; }
 h3 { font-size: 16px; margin: 20px 0 6px; color: var(--neon); }
-.updated { color: var(--muted); font-size: 14px; margin: 0 0 20px; }
-
+.updated { color: var(--muted); font-size: 14px; margin: 0 0 18px; }
 a { color: var(--neon); }
 p, li { overflow-wrap: anywhere; }
+ul, ol { padding-inline-start: 22px; }
+li { margin: 4px 0; }
 
-.panel {
-  background: var(--panel); border: 1px solid var(--border);
-  border-radius: 14px; padding: 14px 16px; margin: 16px 0;
+/* Alert boxes — yellow: take care, red: serious, blue: good to know, green: our promise */
+.note {
+  display: flex; gap: 12px; align-items: flex-start; border-radius: 14px; padding: 14px 16px; margin: 16px 0;
+  border: 1px solid var(--blue); background: var(--blue-soft);
 }
-.panel.neon { border-color: var(--neon); background: var(--neon-soft); }
-.todo { color: var(--warn); font-weight: 600; }
+.note p { margin: 4px 0 0; }
+.note ul { margin: 6px 0 0; }
+.note-ico { width: 28px; height: 28px; margin-top: 2px; color: var(--blue); }
+.note-title { display: block; font-size: 16px; }
+.note.warn { border-color: var(--yellow); background: var(--yellow-soft); }
+.note.warn .note-ico, .note.warn .note-title { color: var(--yellow); }
+.note.danger { border-color: var(--red); background: var(--red-soft); }
+.note.danger .note-ico, .note.danger .note-title { color: var(--red); }
+.note.ok { border-color: var(--neon); background: var(--neon-soft); }
+.note.ok .note-ico, .note.ok .note-title { color: var(--neon); }
 
-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 15px; }
-th, td { text-align: left; vertical-align: top; padding: 8px; border-bottom: 1px solid var(--border); }
-th { color: var(--muted); font-weight: 600; }
+/* Tables */
 .table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 15px; }
+th, td { text-align: start; vertical-align: top; padding: 8px; border-bottom: 1px solid var(--border); }
+th { color: var(--muted); font-weight: 600; }
 
-footer { color: var(--muted); font-size: 14px; padding-top: 30px; padding-bottom: 40px; }
+/* Footer */
+footer { display: flex; gap: 12px; align-items: center; color: var(--muted); font-size: 14px; padding-top: 32px; padding-bottom: 40px; border-top: 1px solid var(--border); margin-top: 40px; }
+footer img { border-radius: 8px; }
+
+@media (max-width: 520px) {
+  h1 { font-size: 26px; }
+  .title-ico { width: 28px; height: 28px; }
+}
