@@ -24,6 +24,9 @@ body {
 }
 header, main, footer { max-width: 820px; margin: 0 auto; padding: 0 16px; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+/* The Latin names isolated in RTL pages ("Meet & Play", "18+"): a break inside
+   one reorders its halves across the two lines, so they never break. */
+bdi { white-space: nowrap; }
 
 /* Header */
 header { padding-top: 20px; }
