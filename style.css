@@ -81,6 +81,10 @@ li { margin: 4px 0; }
 .table-wrap { overflow-x: auto; }
 table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 15px; }
 th, td { text-align: start; vertical-align: top; padding: 8px; border-bottom: 1px solid var(--border); }
+/* Long compound words (German, Dutch, Russian…) made the purposes table wider
+   than a phone, hiding its last column behind a sideways scroll. Let them
+   hyphenate, or break when the language has no hyphenation. */
+th, td { overflow-wrap: anywhere; hyphens: auto; }
 th { color: var(--muted); font-weight: 600; }
 
 /* Footer */
