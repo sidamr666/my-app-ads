@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chess Meet</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Open this player's profile in Chess Meet to add them and play.">
+<meta name="theme-color" content="#0b1210">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Chess Meet">
+<meta property="og:title" content="Let's play chess on Chess Meet">
+<meta property="og:description" content="Open this player's profile in Chess Meet to add them and play.">
+<meta property="og:image" content="https://chessmeet.fyi/img/og-en.jpg">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<link rel="icon" href="/logo.png">
+<style>
+  html, body { margin: 0; min-height: 100%; background: #0b1210; color: #f2f8f4; }
+  body { font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif;
+    background: radial-gradient(800px 520px at 50% 0%, #17381f 0%, #0d1913 55%, #0b1210 100%) no-repeat; }
+  main { box-sizing: border-box; max-width: 440px; margin: 0 auto; padding: 56px 20px 40px; text-align: center; }
+  img { width: 96px; height: 96px; border-radius: 22px; }
+  h1 { font-size: 26px; line-height: 1.25; margin: 22px 0 10px; }
+  p { color: #cfe2d8; margin: 0 0 22px; }
+  .btn { display: block; box-sizing: border-box; width: 100%; padding: 15px 18px; border-radius: 16px;
+    font-weight: 700; text-decoration: none; color: #f2f8f4; border: 1px solid rgba(255,255,255,.18); }
+  .btn.primary { background: linear-gradient(90deg, #b8f04a, #10b981); color: #06110b; border: 0; }
+  .small { color: #9db3a8; font-size: 14px; margin: 26px 0 10px; }
+</style>
+</head>
+<body>
+<main>
+  <img src="/logo.png" alt="Chess Meet">
+  <h1 id="t">Let's play chess on Chess Meet</h1>
+  <p id="b">Open this player's profile in Chess Meet to add them and play.</p>
+  <a class="btn primary" id="open" href="https://play.google.com/store/apps/details?id=com.letschess.lets_chess">Open in Chess Meet</a>
+  <p class="small" id="none">Don't have Chess Meet yet?</p>
+  <a class="btn" id="get" href="https://play.google.com/store/apps/details?id=com.letschess.lets_chess">Get it on Google Play</a>
+</main>
+<script>
+(function () {
+  var T = {"en":{"pt":"You're invited to a game of chess","pb":"A friend is waiting for you on the board. Open the game in Chess Meet.","ut":"Let's play chess on Chess Meet","ub":"Open this player's profile in Chess Meet to add them and play.","open":"Open in Chess Meet","get":"Get it on Google Play","none":"Don't have Chess Meet yet?"},"ar":{"pt":"دعوة إلى مباراة شطرنج","pb":"صديقك ينتظرك على الرقعة. افتح المباراة في Chess Meet.","ut":"لنلعب الشطرنج على Chess Meet","ub":"افتح ملف هذا اللاعب في Chess Meet لتضيفه وتلعب معه.","open":"افتح في Chess Meet","get":"احصل عليه من Google Play","none":"ليس عندك Chess Meet بعد؟"},"fr":{"pt":"Vous êtes invité à une partie d'échecs","pb":"Un ami vous attend devant l'échiquier. Ouvrez la partie dans Chess Meet.","ut":"Jouons aux échecs sur Chess Meet","ub":"Ouvrez le profil de ce joueur dans Chess Meet pour l’ajouter et jouer.","open":"Ouvrir dans Chess Meet","get":"Disponible sur Google Play","none":"Pas encore Chess Meet ?"},"es":{"pt":"Te invitan a una partida de ajedrez","pb":"Un amigo te espera en el tablero. Abre la partida en Chess Meet.","ut":"Juguemos al ajedrez en Chess Meet","ub":"Abre el perfil de este jugador en Chess Meet para agregarlo y jugar.","open":"Abrir en Chess Meet","get":"Disponible en Google Play","none":"¿Aún no tienes Chess Meet?"},"de":{"pt":"Du bist zu einer Schachpartie eingeladen","pb":"Ein Freund wartet am Brett auf dich. Öffne die Partie in Chess Meet.","ut":"Lass uns auf Chess Meet Schach spielen","ub":"Öffne das Profil dieses Spielers in Chess Meet, um ihn hinzuzufügen und zu spielen.","open":"In Chess Meet öffnen","get":"Jetzt bei Google Play","none":"Noch kein Chess Meet?"},"pt":{"pt":"Você foi convidado para uma partida de xadrez","pb":"Um amigo está esperando você no tabuleiro. Abra a partida no Chess Meet.","ut":"Vamos jogar xadrez no Chess Meet","ub":"Abra o perfil deste jogador no Chess Meet para adicioná-lo e jogar.","open":"Abrir no Chess Meet","get":"Disponível no Google Play","none":"Ainda não tem o Chess Meet?"},"it":{"pt":"Sei invitato a una partita a scacchi","pb":"Un amico ti aspetta alla scacchiera. Apri la partita in Chess Meet.","ut":"Giochiamo a scacchi su Chess Meet","ub":"Apri il profilo di questo giocatore in Chess Meet per aggiungerlo e giocare.","open":"Apri in Chess Meet","get":"Disponibile su Google Play","none":"Non hai ancora Chess Meet?"},"tr":{"pt":"Bir satranç maçına davet edildin","pb":"Bir arkadaşın tahtada seni bekliyor. Maçı Chess Meet’te aç.","ut":"Chess Meet’te satranç oynayalım","ub":"Bu oyuncunun profilini Chess Meet’te aç, ekle ve oyna.","open":"Chess Meet’te aç","get":"Google Play’den edinin","none":"Henüz Chess Meet yok mu?"},"ru":{"pt":"Вас пригласили на партию в шахматы","pb":"Друг ждёт вас за доской. Откройте партию в Chess Meet.","ut":"Сыграем в шахматы в Chess Meet","ub":"Откройте профиль этого игрока в Chess Meet, чтобы добавить его и сыграть.","open":"Открыть в Chess Meet","get":"Доступно в Google Play","none":"Ещё нет Chess Meet?"},"uk":{"pt":"Вас запросили на партію в шахи","pb":"Друг чекає на вас за дошкою. Відкрийте партію в Chess Meet.","ut":"Зіграймо в шахи в Chess Meet","ub":"Відкрийте профіль цього гравця в Chess Meet, щоб додати його й зіграти.","open":"Відкрити в Chess Meet","get":"Завантажте з Google Play","none":"Ще немає Chess Meet?"},"pl":{"pt":"Zaproszenie na partię szachów","pb":"Znajomy czeka na ciebie przy szachownicy. Otwórz partię w Chess Meet.","ut":"Zagrajmy w szachy w Chess Meet","ub":"Otwórz profil tego gracza w Chess Meet, aby go dodać i zagrać.","open":"Otwórz w Chess Meet","get":"Pobierz z Google Play","none":"Nie masz jeszcze Chess Meet?"},"nl":{"pt":"Je bent uitgenodigd voor een schaakpartij","pb":"Een vriend wacht op je aan het bord. Open de partij in Chess Meet.","ut":"Laten we schaken op Chess Meet","ub":"Open het profiel van deze speler in Chess Meet om hem toe te voegen en te spelen.","open":"Openen in Chess Meet","get":"Ontdek het op Google Play","none":"Nog geen Chess Meet?"},"ro":{"pt":"Ești invitat la o partidă de șah","pb":"Un prieten te așteaptă la tablă. Deschide partida în Chess Meet.","ut":"Hai să jucăm șah pe Chess Meet","ub":"Deschide profilul acestui jucător în Chess Meet ca să-l adaugi și să jucați.","open":"Deschide în Chess Meet","get":"Descarcă de pe Google Play","none":"Nu ai încă Chess Meet?"},"hu":{"pt":"Meghívtak egy sakkjátszmára","pb":"Egy barátod vár a táblánál. Nyisd meg a játszmát a Chess Meetben.","ut":"Sakkozzunk a Chess Meeten","ub":"Nyisd meg ennek a játékosnak a profilját a Chess Meetben, add hozzá, és játsszatok.","open":"Megnyitás a Chess Meetben","get":"Töltsd le a Google Playről","none":"Még nincs Chess Meeted?"},"el":{"pt":"Σε προσκάλεσαν σε μια παρτίδα σκάκι","pb":"Ένας φίλος σε περιμένει στη σκακιέρα. Άνοιξε την παρτίδα στο Chess Meet.","ut":"Ας παίξουμε σκάκι στο Chess Meet","ub":"Άνοιξε το προφίλ αυτού του παίκτη στο Chess Meet για να τον προσθέσεις και να παίξετε.","open":"Άνοιγμα στο Chess Meet","get":"Διαθέσιμο στο Google Play","none":"Δεν έχεις ακόμα το Chess Meet;"},"da":{"pt":"Du er inviteret til et parti skak","pb":"En ven venter på dig ved brættet. Åbn partiet i Chess Meet.","ut":"Lad os spille skak på Chess Meet","ub":"Åbn denne spillers profil i Chess Meet for at tilføje dem og spille.","open":"Åbn i Chess Meet","get":"Hent den på Google Play","none":"Har du ikke Chess Meet endnu?"},"nb":{"pt":"Du er invitert til et sjakkparti","pb":"En venn venter på deg ved brettet. Åpne partiet i Chess Meet.","ut":"La oss spille sjakk på Chess Meet","ub":"Åpne denne spillerens profil i Chess Meet for å legge dem til og spille.","open":"Åpne i Chess Meet","get":"Last ned fra Google Play","none":"Har du ikke Chess Meet ennå?"},"fa":{"pt":"شما به یک بازی شطرنج دعوت شده‌اید","pb":"دوستتان پای صفحه منتظر شماست. بازی را در Chess Meet باز کنید.","ut":"بیا در Chess Meet شطرنج بازی کنیم","ub":"نمایه این بازیکن را در Chess Meet باز کنید تا او را اضافه کنید و با هم بازی کنید.","open":"باز کردن در Chess Meet","get":"دریافت از Google Play","none":"هنوز Chess Meet ندارید؟"},"hi":{"pt":"आपको शतरंज के एक मैच का न्योता मिला है","pb":"एक दोस्त बोर्ड पर आपका इंतज़ार कर रहा है। मैच Chess Meet में खोलें।","ut":"आइए Chess Meet पर शतरंज खेलें","ub":"इस खिलाड़ी की प्रोफ़ाइल Chess Meet में खोलें, उन्हें जोड़ें और खेलें।","open":"Chess Meet में खोलें","get":"Google Play पर पाएं","none":"अभी तक Chess Meet नहीं है?"},"vi":{"pt":"Bạn được mời chơi một ván cờ vua","pb":"Một người bạn đang chờ bạn bên bàn cờ. Hãy mở ván cờ trong Chess Meet.","ut":"Cùng chơi cờ vua trên Chess Meet","ub":"Mở hồ sơ của người chơi này trong Chess Meet để kết bạn và chơi.","open":"Mở trong Chess Meet","get":"Tải trên Google Play","none":"Chưa có Chess Meet?"},"zh":{"pt":"有人邀请你下一盘国际象棋","pb":"朋友正在棋盘前等你。在 Chess Meet 中打开这盘棋。","ut":"来 Chess Meet 下国际象棋吧","ub":"在 Chess Meet 中打开这位棋手的主页，加为好友并开始对局。","open":"在 Chess Meet 中打开","get":"在 Google Play 上获取","none":"还没有 Chess Meet？"},"az":{"pt":"Sizi şahmat oyununa dəvət edirlər","pb":"Dostunuz taxtanın başında sizi gözləyir. Oyunu Chess Meet-də açın.","ut":"Gəlin Chess Meet-də şahmat oynayaq","ub":"Bu oyunçunun profilini Chess Meet-də açın, əlavə edin və oynayın.","open":"Chess Meet-də aç","get":"Google Play-dən əldə edin","none":"Hələ Chess Meet yoxdur?"}};
+  var kind = 'u';
+  var pkg = 'com.letschess.lets_chess';
+  var q = new URLSearchParams(location.search);
+  var ok = function (s) { return typeof s === 'string' && /^[A-Za-z0-9]{10,40}$/.test(s); };
+  var id = kind === 'play' ? q.get('g') : q.get('id');
+  var inviter = kind === 'play' ? q.get('i') : q.get('id');
+
+  // The reader's language, from the browser's list; English otherwise.
+  var lang = 'en';
+  var wanted = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en'];
+  for (var i = 0; i < wanted.length; i++) {
+    var code = String(wanted[i]).toLowerCase().split('-')[0];
+    if (code === 'no' || code === 'nn') code = 'nb';
+    if (T[code]) { lang = code; break; }
+  }
+  var w = T[lang];
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'ar' || lang === 'fa' ? 'rtl' : 'ltr';
+  document.getElementById('t').textContent = kind === 'play' ? w.pt : w.ut;
+  document.getElementById('b').textContent = kind === 'play' ? w.pb : w.ub;
+  document.getElementById('open').textContent = w.open;
+  document.getElementById('get').textContent = w.get;
+  document.getElementById('none').textContent = w.none;
+
+  // Google Play, naming who sent the link — the invite reward reads it.
+  var ref = ['utm_source=invite', 'utm_medium=' + (kind === 'play' ? 'game_link' : 'profile_link')];
+  if (ok(inviter)) ref.push('inviter=' + inviter);
+  var play = 'https://play.google.com/store/apps/details?id=' + pkg + '&referrer=' + encodeURIComponent(ref.join('&'));
+  document.getElementById('get').href = play;
+
+  // On Android: the app if it is installed, Google Play if it is not.
+  var android = /Android/i.test(navigator.userAgent);
+  if (!android || !ok(id)) { document.getElementById('open').href = play; return; }
+  var target = kind === 'play' ? '/play/?g=' + id + (ok(inviter) ? '&i=' + inviter : '') : '/u/?id=' + id;
+  var intent = 'intent://chessmeet.fyi' + target + '#Intent;scheme=https;package=' + pkg +
+    ';S.browser_fallback_url=' + encodeURIComponent(play) + ';end';
+  document.getElementById('open').href = intent;
+  location.replace(intent);
+})();
+</script>
+</body>
+</html>

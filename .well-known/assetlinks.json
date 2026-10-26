@@ -1,0 +1,18 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.letschess.lets_chess",
+      "sha256_cert_fingerprints": [
+        "89:AF:11:43:23:62:CC:94:82:E2:54:B1:B6:32:26:00:88:12:1E:B7:B0:AD:91:E3:4F:9D:87:FC:2C:F5:3C:93",
+        "97:8C:DC:B1:55:2B:40:6A:80:BF:3A:B5:35:A6:85:51:F0:0A:53:82:05:94:9A:54:38:21:46:56:F4:96:1F:2E",
+        "56:F8:66:2C:AE:43:D9:15:B3:28:F5:9A:9D:69:0A:6B:11:D0:30:19:4C:88:CE:AC:B1:43:A5:3D:86:B6:82:2F",
+        "32:1A:6C:26:E5:12:DA:18:91:16:31:BF:FB:D7:CF:0D:A6:2A:2B:E1:B3:23:98:48:1D:7F:FA:DF:36:BE:08:BF",
+        "25:A2:17:A9:44:C3:CD:FA:86:E2:D9:EF:BD:3B:1B:CE:B7:9B:74:D7:9D:A4:7F:B1:74:EA:8C:5A:23:B1:4B:70"
+      ]
+    }
+  }
+]
